@@ -1,0 +1,7 @@
+<form #profile="ngForm" (ngSubmit)="onClickSubmit(profile.value)"> 
+    <input type="text" name="firstname" placeholder="firstname" ngModel> 
+  <input type="text" name="lastname" placeholder="lastname" ngModel> 
+    <input type="submit" value="Save"> 
+ </form>
+
+ <!-- <a [routerLink]="['/user']">Click ME</a> -->

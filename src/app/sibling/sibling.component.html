@@ -1,0 +1,25 @@
+<div>
+   <h1>Angular HTML Table Example</h1>
+   <table>
+      <thead>
+         <tr>
+            <th>#ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+          
+         </tr>
+      </thead>
+      <tbody>
+         <tr *ngFor="let item of Users">
+            <th>{{ item.id }}</th>
+            <td>{{ item.name }}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.phone}}</td>
+        
+         </tr>
+      </tbody>
+   </table>
+</div>
+
+<p> {{convertText | uppercase}}  </p>

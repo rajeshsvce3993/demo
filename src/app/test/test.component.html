@@ -1,0 +1,70 @@
+<form [formGroup]="bioSection" (ngSubmit)="calling()">
+    <h3>Bio Details
+ </h3>
+ 
+  <label>
+    First Name:
+    <input type="text" formControlName="firstName" class="form-control">
+    <div *ngIf="getControl.firstName.touched && getControl.firstName.invalid" class="text-danger">
+      <div *ngIf="getControl.firstName.errors?.required">First Name is required.</div>
+      <div *ngIf="getControl.firstName.errors?.minlength">Minimum 4 character are required.</div>
+  </div>
+  </label> <br>
+ <label>
+    Last Name:
+    <input type="text" formControlName="lastName" class="form-control">
+    <div *ngIf="getControl.lastName.touched && getControl.firstName.invalid" class="text-danger">
+      <div *ngIf="getControl.lastName.errors?.required">Last Name is required.</div>
+ </div>
+    </label> <br>
+ <label>
+    Email:
+    <input type="text" formControlName="email">
+    <div *ngIf="getControl.email.touched && getControl.email.invalid" class="alert alert-danger">
+      <div *ngIf="getControl.email.errors?.required">Email is required.</div>
+      <div *ngIf="getControl.email.errors?.email">Please, enter valid email address.</div>
+  </div>
+  </label>
+
+  <div>
+    <input id="male" type="radio" value="male" name="gender" formControlName="gender">
+    <label for="male">Male</label>
+ </div>
+
+ <div>
+    <input id="female" type="radio" value="female" name="gender" formControlName="gender">
+    <label for="female">Female</label>
+ </div>
+ 
+ <div formGroupName="stackDetails">
+    <h3>Stack Details</h3>
+ 
+    <label>
+      Stack:
+      <input type="text" formControlName="stack">
+    </label> <br>
+ 
+    <label>
+      Experience:
+      <input type="text" formControlName="experience">
+    </label>
+  </div>
+ <div formGroupName="address">
+    <h3>Address</h3>
+ 
+    <label>
+      Country:
+      <input type="text" formControlName="country">
+    </label> <br>
+ 
+    <label>
+      City:
+      <input type="text" formControlName="city">
+    </label>
+  </div>
+ <button type="submit">Submit Application</button>
+ </form>
+
+
+
+ <a [routerLink]="['/user']">Click ME</a>
